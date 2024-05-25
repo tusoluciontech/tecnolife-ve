@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<meta name="author" content="Tecnolife-ve">
+	<meta name="description" content="Tecnolife-ve">
+
+	<!-- Font Imports -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+	<!-- Core Style -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="css/font-icons.css">
+
+	<!-- Plugins/Components CSS -->
+	<link rel="stylesheet" href="css/swiper.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/custom.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title x-data="$store.landingPage.miEmpresa.nombre" x-text="$store.landingPage.miEmpresa.nombre"></title>
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper">
+		<div id="home" class="page-section" style="position:absolute;top:0;left:0;width:100%;height:200px;z-index:-2;"></div>
+		<section id="slider" class="slider-element slider-parallax min-vh-60 min-vh-md-100 with-header swiper_wrapper">
+			<div class="slider-inner">
+				<div class="swiper swiper-parent"  x-data="$store.landingPage.slider">
+					<div class="swiper-wrapper">
+						<template x-for="slide in $store.landingPage.slider">
+							<div class="swiper-slide dark" >
+								<div class="container">
+									<div class="slider-caption slider-caption-center">
+										<h2 data-animate="fadeInUp" x-text="slide.tituloPrincipal"></h2>
+										<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200" x-text="slide.subTitulo"></p>
+									</div>
+								</div>
+								<div class="swiper-slide-bg" :style="`background-image: url('${slide.imagen.url}');`"></div>
+							</div>
+						</template>
+					</div>
+					<div class="slider-arrow-left"><i class="uil uil-angle-left-b"></i></div>
+					<div class="slider-arrow-right"><i class="uil uil-angle-right-b"></i></div>
+					<div class="slide-number"><div class="slide-number-current"></div><span>/</span><div class="slide-number-total"></div></div>
+				</div>
+			</div>
+		</section>
+
+		<header id="header" class="full-header" x-data="$store.landingPage.miEmpresa">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row">
+						<div id="logo">
+							<a href="javascript:void(0);">
+								<img class="logo-default" :srcset="`${$store.landingPage.miEmpresa.logo.url} ${$store.landingPage.miEmpresa.logo.url} 2x`" :src="$store.landingPage.miEmpresa.logo.url" :alt="$store.landingPage.miEmpresa.nombre">
+								<img class="logo-dark" :srcset="`${$store.landingPage.miEmpresa.logo.url} ${$store.landingPage.miEmpresa.logo.url} 2x`" :src="$store.landingPage.miEmpresa.logo.url" :alt="$store.landingPage.miEmpresa.nombre">
+							</a>
+						</div>
+
+						<div class="primary-menu-trigger">
+							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+							</button>
+						</div>
+
+						<nav class="primary-menu">
+							<ul class="menu-container one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
+								<li class="menu-item"><a class="menu-link" href="#" data-href="#home"><div>Inicio</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-about"><div>Nosotros</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-work"><div>Nuestro trabajo</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-services"><div>Servicios</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-team"><div>Aliados</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-testimonials" data-offset="60"><div>Testimoniales</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-contact"><div>Contacto</div></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+
+				<section id="section-about" class="page-section" x-data="$store.landingPage.about">
+					<div class="container">
+						<div class="heading-block text-center">
+							<h2 x-html="$store.landingPage.about.tituloPrincipal"></h2>
+							<span x-text="$store.landingPage.about.informacionComplemetaria"></span>
+						</div>
+						<div class="row justify-content-center col-mb-50">
+							<div class="col-sm-6 col-lg-4">
+								<div class="feature-box media-box">
+									<div class="fbox-media">
+										<img :src="$store.landingPage.about.informacionDestacada.imagenDestacada.url" :alt="`${$store.landingPage.about.informacionDestacada.titulo}`">
+									</div>
+									<div class="fbox-content px-0">
+										<h3 x-text="$store.landingPage.about.informacionDestacada.titulo"></h3>
+										<h3><span class="subtitle" x-text="$store.landingPage.about.informacionDestacada.subTitulo"></span></h3>
+										<p x-text="$store.landingPage.about.informacionDestacada.breveDescripcion"></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-4">
+								<div class="feature-box media-box">
+									<div class="fbox-media">
+										<img :src="$store.landingPage.about.informacionDestacada2.imagenDestacada.url" :alt="`${$store.landingPage.about.informacionDestacada2.titulo}`">
+									</div>
+									<div class="fbox-content px-0">
+										<h3 x-text="$store.landingPage.about.informacionDestacada2.titulo"></h3>
+										<h3><span class="subtitle" x-text="$store.landingPage.about.informacionDestacada2.subTitulo"></span></h3>
+										<p x-text="$store.landingPage.about.informacionDestacada2.breveDescripcion"></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-4">
+								<div class="feature-box media-box">
+									<div class="fbox-media">
+										<img :src="$store.landingPage.about.informacionDestacada3.imagenDestacada.url" :alt="`${$store.landingPage.about.informacionDestacada3.titulo}`">
+									</div>
+									<div class="fbox-content px-0">
+										<h3 x-text="$store.landingPage.about.informacionDestacada3.titulo"></h3>
+										<h3><span class="subtitle" x-text="$store.landingPage.about.informacionDestacada3.subTitulo"></span></h3>
+										<p x-text="$store.landingPage.about.informacionDestacada3.breveDescripcion"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="section-work" class="page-section mt-6" x-data="$store.landingPage.trabajo">
+					<div class="heading-block text-center">
+						<h2 x-text="$store.landingPage.trabajo.tituloPrincipal"></h2>
+						<span x-text="$store.landingPage.trabajo.informacionAdicional"></span>
+					</div>
+					<div class="container">
+						<div id="portfolio" class="portfolio row g-0 text-center">
+							<template x-for="job in $store.landingPage.trabajo.trabajos">
+								<article class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-media pf-icons">
+									<div class="grid-inner">
+										<div class="portfolio-image">
+											<img :src="job.imagenJob.url" :alt="job.tituloDelTrabajo">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content dark" data-hover-animate="fadeIn">
+													<a :href="job.imagenJob.url" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="image" title="Image"><i class="uil uil-plus"></i></a>
+												</div>
+												<div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
+											</div>
+										</div>
+										<div class="portfolio-desc">
+											<h3 x-text="job.tituloDelTrabajo"></h3>
+											<span x-text="job.palabrasClave"></span>
+										</div>
+									</div>
+								</article>
+							</template>
+						</div>
+					</div>
+				</section>
+
+				<section id="section-services" class="page-section mt-6" x-data="$store.landingPage.servicios">
+					<div class="heading-block text-center mb-6">
+						<h2 x-text="$store.landingPage.servicios.tituloPrincipal"></h2>
+						<span x-text="$store.landingPage.servicios.informacionAdicional"></span>
+					</div>
+					<div class="container">
+						<div class="row justify-content-center col-mb-50">
+							<template x-for="service in $store.landingPage.servicios.servicios">
+								<div class="col-sm-6 col-lg-4">
+									<div class="feature-box fbox-center fbox-effect border-bottom-0" data-animate="fadeIn">
+										<div class="fbox-icon">
+											<i :class="service.icono"></i>
+										</div>
+										<div class="fbox-content">
+											<h3 x-text="service.titulo"></h3>
+											<p x-text="service.descripcion"></p>
+										</div>
+									</div>
+								</div>
+							</template>
+						</div>
+					</div>
+
+					<div class="section parallax scroll-detect py-6">
+						<img src="images/3.jpg" class="parallax-bg">
+						<div class="heading-block text-center border-bottom-0 mb-0">
+							<h2 x-text="$store.landingPage.servicios.textoBannerDeServicio"></h2>
+						</div>
+					</div>
+				</section>
+
+				<section id="section-team" class="page-section mt-6" x-data="$store.landingPage.aliados">
+					<div class="heading-block text-center">
+						<h2 x-text="$store.landingPage.aliados.tituloPrincipal"></h2>
+						<span x-text="$store.landingPage.aliados.informacionAdicional"></span>
+					</div>
+					<div class="container">
+						<div class="row col-mb-50 mb-0">
+							<template x-for="aliado in $store.landingPage.aliados.aliados">
+								<div class="col-lg-6">
+									<div class="team team-list row align-items-center">
+										<div class="team-image col-sm-6">
+											<img :src="aliado.imagen.url" alt="John Doe" class="rounded-6">
+										</div>
+										<div class="team-desc col-sm-6">
+											<div class="team-title"><h4 x-text="aliado.nombre"></h4><span x-text="aliado.puestoNegocio"></span></div>
+											<div class="team-content" x-text="aliado.descripcion"></div>
+											<div class="d-flex justify-content-center mt-4">
+												<a :href="aliado.linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+													<i class="fa-brands fa-facebook-f"></i>
+													<i class="fa-brands fa-facebook-f"></i>
+												</a>
+												<a :href="aliado.linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+													<i class="fa-brands fa-x-twitter"></i>
+													<i class="fa-brands fa-x-twitter"></i>
+												</a>
+												<a :href="aliado.linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+													<i class="fa-brands fa-instagram"></i>
+													<i class="fa-brands fa-instagram"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</template>
+						</div>						
+
+					</div>
+
+				</section>
+
+				<section id="section-testimonials" class="page-section section parallax scroll-detect dark" style="padding: 200px 0;" x-data="$store.landingPage.testimoniales">
+					<img src="images/me-parallax.jpg" class="parallax-bg">
+					<div class="container">
+						<div class="row col-mb-50">
+							<div class="col-md-6">&nbsp;</div>
+							<div class="col-md-6">
+								<div class="heading-block text-center">
+									<h4 x-text="$store.landingPage.testimoniales.tituloPrincipal"></h4>
+									<span x-text="$store.landingPage.testimoniales.informacionAdicional"></span>
+								</div>
+								<div class="fslider testimonial testimonial-full bg-transparent text-center border-0 shadow-none p-0" data-arrows="false">
+									<div class="flexslider">
+										<div class="slider-wrap">
+											<template x-for="review in $store.landingPage.testimoniales.review">
+												<div class="slide">
+													<p class="mb-4 fs-5 fw-light font-secondary ls-1" x-text="review.review"></p>
+													<h4 class="fs-6 mb-0 fw-medium" x-text="review.nombreContacto"></h4>
+													<small class="text-muted" x-text="review.nombreDeNegocioEmpresa"></small>
+												</div>
+											</template>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="section-contact" class="page-section" x-data="$store.landingPage.contacto">
+					<div class="heading-block text-center">
+						<h2 x-text="$store.landingPage.contacto.tituloPrincipal"></h2>
+						<span x-text="$store.landingPage.contacto.informacionAdicional"></span>
+					</div>
+					<div class="container">
+						<div class="row align-items-stretch col-mb-50 mb-0">
+							<div class="col-lg-12 min-vh-40">
+								<img :src="$store.landingPage.contacto.mapa.url" alt="Why choose Us?">
+                            </div>
+						</div>
+						<div class="w-100">
+							<div class="row col-mb-50">
+								<template x-for="contacto in $store.landingPage.contacto.masInformacionDeContacto">
+									<div class="col-sm-6 col-lg-3">
+										<div class="feature-box fbox-center fbox-bg fbox-plain">
+											<div class="fbox-icon">
+												<i :class="contacto.icono"></i>
+											</div>
+											<div class="fbox-content">
+												<h3 x-text="contacto.titulo"></h3>
+												<h3><span class="subtitle" x-text="contacto.descripcion"></span></h3>
+											</div>
+										</div>
+									</div>
+								</template>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</div>
+		</section><!-- #content end -->
+
+	
+		<footer id="footer" class="dark">
+			<div id="copyrights">
+				<div class="container">
+					<div class="row col-mb-30">
+						<div class="col-md-6 text-center text-md-start">
+							Copyrights &copy; 2024 All Rights Reserved <span x-data="$store.landingPage.miEmpresa.nombre" x-text="$store.landingPage.miEmpresa.nombre"></span>.<br />
+							<div class="copyright-links"><a href="javascript:void(0);">Condiciones de uso</a> / <a href="javascript:void(0);">Política de privacidad</a></div>
+						</div>
+						<div class="col-md-6 text-center text-md-end">
+							<div class="d-flex justify-content-center justify-content-md-end mb-2">
+								<a x-data="$store.landingPage.miEmpresa.linkFacebook" target="_blank" :href="$store.landingPage.miEmpresa.linkFacebook" class="social-icon border-transparent si-small h-bg-facebook">
+									<i class="fa-brands fa-facebook-f"></i>
+									<i class="fa-brands fa-facebook-f"></i>
+								</a>
+								<a x-data="$store.landingPage.miEmpresa.linkTwitter" target="_blank" :href="$store.landingPage.miEmpresa.linkTwitter" class="social-icon border-transparent si-small h-bg-x-twitter">
+									<i class="fa-brands fa-x-twitter"></i>
+									<i class="fa-brands fa-x-twitter"></i>
+								</a>
+								<a x-data="$store.landingPage.miEmpresa.linkIntagram" target="_blank" :href="$store.landingPage.miEmpresa.linkIntagram" class="social-icon border-transparent si-small h-bg-instagram">
+									<i class="fa-brands fa-instagram"></i>
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+							</div>
+							<i class="bi-envelope"></i> <span x-data="$store.landingPage.miEmpresa.correo" x-text="$store.landingPage.miEmpresa.correo"></span> <span class="middot">&middot;</span> <i class="fa-solid fa-phone"></i> <span x-data="$store.landingPage.miEmpresa.telefono" x-text="$store.landingPage.miEmpresa.telefono"></span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="uil uil-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="/js/plugins.min.js"></script>
+	<script src="/js/functions.bundle.js"></script>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

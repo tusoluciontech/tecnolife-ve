@@ -1,0 +1,19 @@
+{
+  "name": "tecnolofeve-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.10",
+    "graphql": "^16.8.1",
+    "graphql-request": "^7.0.1"
+  }
+}
