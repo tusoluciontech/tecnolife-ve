@@ -38,6 +38,18 @@ Alpine.store('landingPage', {
   contacto: {
     mapa: {},
     masInformacionDeContacto: [{}, {}, {}, {}]
+  },
+  pagina1: {
+    header: {
+      image: {}
+    },
+    servicios: { servicios: [{}, {}, {}, {}, {}, {}, {}, {}, {}] },
+  },
+  pagina2: {
+    header: {
+      image: {}
+    },
+    servicios: { servicios: [{}, {}, {}, {}, {}, {}, {}, {}, {}] },
   }
 })
 
@@ -168,12 +180,78 @@ export const LANDINGPAGE_QUERY = gql`
           icono
         }
       }
+      pagina1 {
+        header {
+          titulo
+          descripcion
+          image {
+            url
+          }
+          callToActionLink
+          callToActionText
+        }
+        planes {
+          titulo
+          simboloMoneda
+          precio
+          icono
+          callToActionUrl
+          callToActionText
+          caracteristicas {
+            feature
+          }
+        }
+        servicios {
+          tituloPrincipal
+          informacionAdicional
+          textoBannerDeServicio
+          servicios {
+            titulo
+            link
+            icono
+            descripcion
+          }
+        }
+      }
+      pagina2 {
+        header {
+          titulo
+          descripcion
+          image {
+            url
+          }
+          callToActionLink
+          callToActionText
+        }
+        planes {
+          titulo
+          simboloMoneda
+          precio
+          icono
+          callToActionUrl
+          callToActionText
+          caracteristicas {
+            feature
+          }
+        }
+        servicios {
+          tituloPrincipal
+          informacionAdicional
+          textoBannerDeServicio
+          servicios {
+            titulo
+            link
+            icono
+            descripcion
+          }
+        }
+      }
     }
   }
 `;
 
-const getLandingPageData = () => {
-  return ClientGraphQL({
+const getLandingPageData = async () => {
+  return await ClientGraphQL({
     query: LANDINGPAGE_QUERY,
   });
 };
@@ -188,6 +266,8 @@ getLandingPageData().then(res => {
   Alpine.store('landingPage').aliados = res.landingpage.aliados;
   Alpine.store('landingPage').testimoniales = res.landingpage.testimoniales;
   Alpine.store('landingPage').contacto = res.landingpage.contacto;
+  Alpine.store('landingPage').pagina1 = res.landingpage.pagina1;
+  Alpine.store('landingPage').pagina2 = res.landingpage.pagina2;
 }).catch(err => {
   console.log(err)
 })

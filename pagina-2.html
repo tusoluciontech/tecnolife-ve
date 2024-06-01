@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<meta name="author" content="Tecnolife-ve">
+	<meta name="description" content="Tecnolife-ve">
+
+	<!-- Font Imports -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+	<!-- Core Style -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="css/font-icons.css">
+
+	<!-- Plugins/Components CSS -->
+	<link rel="stylesheet" href="css/swiper.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/custom.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title x-data="$store.landingPage.miEmpresa.nombre" x-text="$store.landingPage.miEmpresa.nombre"></title>
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper">
+		
+		<header id="header" class="full-header" x-data="$store.landingPage.miEmpresa">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row">
+						<div id="logo">
+							<a href="javascript:void(0);">
+								<img class="logo-default" :srcset="`${$store.landingPage.miEmpresa.logo.url} ${$store.landingPage.miEmpresa.logo.url} 2x`" :src="$store.landingPage.miEmpresa.logo.url" :alt="$store.landingPage.miEmpresa.nombre">
+								<img class="logo-dark" :srcset="`${$store.landingPage.miEmpresa.logo.url} ${$store.landingPage.miEmpresa.logo.url} 2x`" :src="$store.landingPage.miEmpresa.logo.url" :alt="$store.landingPage.miEmpresa.nombre">
+							</a>
+						</div>
+
+						<div class="primary-menu-trigger">
+							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+							</button>
+						</div>
+
+						<nav class="primary-menu">
+							<ul class="menu-container one-page-menu" data-easing="easeInOutExpo" data-speed="1500">
+								<li class="menu-item"><a class="menu-link" href="/#home"><div>Inicio</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="/#section-about"><div>Nosotros</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="/#section-work"><div>Nuestro trabajo</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="/#section-services"><div>Servicios</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="/#section-team"><div>Aliados</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="/#section-testimonials" data-offset="60"><div>Testimoniales</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#section-contact/"><div>Contacto</div></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap" x-data="$store.landingPage.pagina2">
+
+				
+
+				<div class="container">
+					<div class="row align-items-end align-items-center">
+						<div class="col-lg-6">
+							<h2 class="display-4 fw-bold" x-text="$store.landingPage.pagina2.header.titulo"></h2>
+							<p x-text="$store.landingPage.pagina2.header.descripcion"></p>
+							<a :href="$store.landingPage.pagina2.header.callToActionLink" class="button button-rounded button-large text-transform-none ls-0" x-text="$store.landingPage.pagina2.header.callToActionText"></a>
+						</div>
+						<div class="col-lg-6 mt-4 mt-lg-0">
+							<img :src="$store.landingPage.pagina2.header.image.url" alt="Image">
+						</div>
+					</div>
+				</div>
+				
+				<section id="section-services" class="page-section mt-6">
+					<div class="heading-block text-center mb-6">
+						<h2 x-text="$store.landingPage.pagina2.servicios.tituloPrincipal"></h2>
+						<span x-text="$store.landingPage.pagina2.servicios.informacionAdicional"></span>
+					</div>
+					<div class="container">
+						<div class="row justify-content-center col-mb-50">
+							<template x-for="service in $store.landingPage.pagina2.servicios.servicios">
+								<div class="col-sm-6 col-lg-4">
+									<div class="feature-box fbox-center fbox-effect border-bottom-0" data-animate="fadeIn">
+										<div class="fbox-icon">
+											<i :class="service.icono"></i>
+										</div>
+										<div class="fbox-content">
+											<h3 x-text="service.titulo"></h3>
+											<p x-text="service.descripcion"></p>
+											<a :href="service.link" x-show="service.link"><i class="bi bi-box-arrow-up-right"></i></a>
+										</div>
+									</div>
+								</div>
+							</template>
+						</div>
+					</div>
+
+				</section>
+
+				<section id="section-planes" class="page-section mt-6">
+					<div class="heading-block text-center mb-6">
+						<h2>Planes</h2>
+					</div>
+					<div class="container">
+						<div class="row">
+							<template x-for="plan in $store.landingPage.pagina2.planes">
+								<div class="col-sm-12 col-md-4">
+									<div class="pricing-box p-4">
+										<div class="pricing-title text-center">
+											<i :class="plan.icono" style="font-size:50px;"></i>
+											<h3 x-text="plan.titulo"></h3>
+										</div>
+										<div class="pricing-price text-center">
+											<div class="pts-content pts-content-false"><span class="price-unit" x-text="plan.simboloMoneda"></span><span x-text="plan.precio"></span> <br/> <span class="price-tenure">Por mes</span></div>
+										</div>
+										<div class="pricing-features border-0 bg-transparent">
+											<ul>
+												<template x-for="feature in plan.caracteristicas">
+													<li><i class="fa-solid fa-check-circle color me-2"></i> <span x-text="feature.feature"></span> </li>
+												</template>
+											</ul>
+										</div>
+										<div class="pricing-action">
+											<div class="pts-content pts-content-true"><a :href="plan.callToActionUrl" class="button button-large button-rounded w-100 text-capitalize m-0 ls-0" x-text="plan.callToActionText"></a></div>
+										</div>
+									</div>
+								</div>
+							</template>
+						</div>
+					</div>
+
+				</section>
+
+			</div>
+		</section><!-- #content end -->
+
+	
+		<footer id="footer" class="dark">
+			<div id="copyrights">
+				<div class="container">
+					<div class="row col-mb-30">
+						<div class="col-md-6 text-center text-md-start">
+							Copyrights &copy; 2024 All Rights Reserved <span x-data="$store.landingPage.miEmpresa.nombre" x-text="$store.landingPage.miEmpresa.nombre"></span>.<br />
+							<div class="copyright-links"><a href="javascript:void(0);">Condiciones de uso</a> / <a href="javascript:void(0);">Política de privacidad</a></div>
+						</div>
+						<div class="col-md-6 text-center text-md-end">
+							<div class="d-flex justify-content-center justify-content-md-end mb-2">
+								<a x-data="$store.landingPage.miEmpresa.linkFacebook" x-show="$store.landingPage.miEmpresa.linkFacebook" target="_blank" :href="$store.landingPage.miEmpresa.linkFacebook" class="social-icon border-transparent si-small h-bg-facebook">
+									<i class="fa-brands fa-facebook-f"></i>
+									<i class="fa-brands fa-facebook-f"></i>
+								</a>
+								<a x-data="$store.landingPage.miEmpresa.linkTwitter" x-show="$store.landingPage.miEmpresa.linkTwitter" target="_blank" :href="$store.landingPage.miEmpresa.linkTwitter" class="social-icon border-transparent si-small h-bg-x-twitter">
+									<i class="fa-brands fa-x-twitter"></i>
+									<i class="fa-brands fa-x-twitter"></i>
+								</a>
+								<a x-data="$store.landingPage.miEmpresa.linkIntagram" x-show="$store.landingPage.miEmpresa.linkIntagram" target="_blank" :href="$store.landingPage.miEmpresa.linkIntagram" class="social-icon border-transparent si-small h-bg-instagram">
+									<i class="fa-brands fa-instagram"></i>
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+								<a x-data="$store.landingPage.miEmpresa.linkMercadoLibre" x-show="$store.landingPage.miEmpresa.linkMercadoLibre" target="_blank" :href="$store.landingPage.miEmpresa.linkMercadoLibre" class="social-icon border-transparent si-small h-bg-slack">
+									<i class="fa-regular fa-handshake"></i>
+									<i class="fa-regular fa-handshake"></i>
+								</a>
+								<a x-data="$store.landingPage.miEmpresa.linkWhatsapp" x-show="$store.landingPage.miEmpresa.linkWhatsapp" target="_blank" :href="$store.landingPage.miEmpresa.linkWhatsapp" class="social-icon border-transparent si-small h-bg-whatsapp">
+									<i class="fa-brands fa-whatsapp"></i>
+									<i class="fa-brands fa-whatsapp"></i>
+								</a>
+								<a x-data="$store.landingPage.miEmpresa.linkTiktok" x-show="$store.landingPage.miEmpresa.linkTiktok" target="_blank" :href="$store.landingPage.miEmpresa.linkTiktok" class="social-icon border-transparent si-small h-bg-tiktok">
+									<i class="fa-brands fa-tiktok"></i>
+									<i class="fa-brands fa-tiktok"></i>
+								</a>
+							</div>
+							<i class="bi-envelope"></i> <span x-data="$store.landingPage.miEmpresa.correo" x-text="$store.landingPage.miEmpresa.correo"></span> <span class="middot">&middot;</span> <i class="fa-solid fa-phone"></i> <span x-data="$store.landingPage.miEmpresa.telefono" x-text="$store.landingPage.miEmpresa.telefono"></span>
+						</div>
+					</div>
+					<div class="row col-mb-30">
+						<div class="col-md-12 text-center">
+							<span x-data="$store.landingPage.miEmpresa.direccion" x-text="$store.landingPage.miEmpresa.direccion">asdadadsasdasd</span><br />
+							<span x-data="$store.landingPage.miEmpresa.rif" x-text="$store.landingPage.miEmpresa.rif">asdasdasdadas</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="uil uil-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="/js/plugins.min.js"></script>
+	<script src="/js/functions.bundle.js"></script>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
