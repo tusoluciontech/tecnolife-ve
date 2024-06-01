@@ -30,14 +30,10 @@ Alpine.store('landingPage', {
     ]
   },
   aliados: {
-    aliados: [
-      {imagen: {}}, {imagen: {}}, {imagen: {}}, {imagen: {}}
-    ]
+    aliados: []
   },
   testimoniales: {
-    review: [
-      {}, {}, {}, {}
-    ]
+    review: []
   },
   contacto: {
     mapa: {},
@@ -65,9 +61,14 @@ export const LANDINGPAGE_QUERY = gql`
         descripcion
         correo
         telefono
+        direccion
+        rif
         linkFacebook
         linkIntagram
         linkTwitter
+        linkMercadoLibre
+        linkTiktok
+        linkWhatsapp
         logo {
           url
         }
@@ -138,6 +139,7 @@ export const LANDINGPAGE_QUERY = gql`
           linkTwitter
           linkInstagram
           linkFacebook
+          linkWeb
           imagen {
             url
           }
@@ -147,9 +149,11 @@ export const LANDINGPAGE_QUERY = gql`
         tituloPrincipal
         informacionAdicional
         review {
-          nombreContacto
-          nombreDeNegocioEmpresa
-          review
+          titulo
+          descripcion
+          imagen {
+            url
+          }
         }
       }
       contacto {
