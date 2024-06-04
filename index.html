@@ -80,7 +80,7 @@
 								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-work"><div>Nuestro trabajo</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-services"><div>Servicios</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-team"><div>Aliados</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-testimonials" data-offset="60"><div>Testimoniales</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-testimonials" data-offset="60"><div>Mas</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-contact"><div>Contacto</div></a></li>
 							</ul>
 						</nav>
@@ -211,7 +211,7 @@
 					</div>
 					<div class="container">
 						<div class="container">
-							<div id="oc-testi" class="owl-carousel testimonials-carousel carousel-widget" data-margin="0" data-center="true" data-autoplay="10000" data-items-xs="1" data-items-sm="1" data-items-md="2" data-items-xl="3">
+							<div id="oc-testi" class="owl-carousel testimonials-carousel carousel-widget" data-margin="0" data-pagi="true" data-loop="true" data-autoplay="2000" data-items-xs="1" data-items-sm="1" data-items-md="2" data-items-xl="3">
 								<template x-if="$store.landingPage.aliados.aliados[0]">
 									<div class="oc-item" >
 										<div class="card border-0">
@@ -340,6 +340,278 @@
 														<i class="fa-brands fa-instagram"></i>
 													</a>
 													<a :href="$store.landingPage.aliados.aliados[3].linkWeb" x-show="$store.landingPage.aliados.aliados[3].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-solid fa-globe"></i>
+														<i class="fa-solid fa-globe"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</template>
+								<template x-if="$store.landingPage.aliados.aliados[4]">
+									<div class="oc-item">
+										<div class="card border-0">
+											<img class="testimonial-image p-2 bg-white" :src="$store.landingPage.aliados.aliados[4].imagen.url" alt="Customer Testimonails">
+											<div class="card-body p-4 pt-2 position-relative overflow-hidden">
+												<div class="row">
+													<div class="col-12 text-center">
+														<h4 class="h6 mb-0 fw-bold" x-text="$store.landingPage.aliados.aliados[4].nombre"></h4>
+														<small class="text-muted" x-text="$store.landingPage.aliados.aliados[4].puestoNegocio"></small>
+														<p class="mb-4 font-primary fst-normal" x-text="$store.landingPage.aliados.aliados[4].descripcion"></p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-center mt-4">
+													<a :href="$store.landingPage.aliados.aliados[4].linkFacebook" x-show="$store.landingPage.aliados.aliados[4].linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+														<i class="fa-brands fa-facebook-f"></i>
+														<i class="fa-brands fa-facebook-f"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[4].linkTwitter" x-show="$store.landingPage.aliados.aliados[4].linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-brands fa-x-twitter"></i>
+														<i class="fa-brands fa-x-twitter"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[4].linkInstagram" x-show="$store.landingPage.aliados.aliados[4].linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+														<i class="fa-brands fa-instagram"></i>
+														<i class="fa-brands fa-instagram"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[4].linkWeb" x-show="$store.landingPage.aliados.aliados[4].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-solid fa-globe"></i>
+														<i class="fa-solid fa-globe"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</template>
+								<template x-if="$store.landingPage.aliados.aliados[5]">
+									<div class="oc-item">
+										<div class="card border-0">
+											<img class="testimonial-image p-2 bg-white" :src="$store.landingPage.aliados.aliados[5].imagen.url" alt="Customer Testimonails">
+											<div class="card-body p-4 pt-2 position-relative overflow-hidden">
+												<div class="row">
+													<div class="col-12 text-center">
+														<h4 class="h6 mb-0 fw-bold" x-text="$store.landingPage.aliados.aliados[5].nombre"></h4>
+														<small class="text-muted" x-text="$store.landingPage.aliados.aliados[5].puestoNegocio"></small>
+														<p class="mb-4 font-primary fst-normal" x-text="$store.landingPage.aliados.aliados[5].descripcion"></p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-center mt-4">
+													<a :href="$store.landingPage.aliados.aliados[5].linkFacebook" x-show="$store.landingPage.aliados.aliados[5].linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+														<i class="fa-brands fa-facebook-f"></i>
+														<i class="fa-brands fa-facebook-f"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[5].linkTwitter" x-show="$store.landingPage.aliados.aliados[5].linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-brands fa-x-twitter"></i>
+														<i class="fa-brands fa-x-twitter"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[5].linkInstagram" x-show="$store.landingPage.aliados.aliados[5].linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+														<i class="fa-brands fa-instagram"></i>
+														<i class="fa-brands fa-instagram"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[5].linkWeb" x-show="$store.landingPage.aliados.aliados[5].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-solid fa-globe"></i>
+														<i class="fa-solid fa-globe"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</template>
+								<template x-if="$store.landingPage.aliados.aliados[6]">
+									<div class="oc-item">
+										<div class="card border-0">
+											<img class="testimonial-image p-2 bg-white" :src="$store.landingPage.aliados.aliados[6].imagen.url" alt="Customer Testimonails">
+											<div class="card-body p-4 pt-2 position-relative overflow-hidden">
+												<div class="row">
+													<div class="col-12 text-center">
+														<h4 class="h6 mb-0 fw-bold" x-text="$store.landingPage.aliados.aliados[6].nombre"></h4>
+														<small class="text-muted" x-text="$store.landingPage.aliados.aliados[6].puestoNegocio"></small>
+														<p class="mb-4 font-primary fst-normal" x-text="$store.landingPage.aliados.aliados[6].descripcion"></p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-center mt-4">
+													<a :href="$store.landingPage.aliados.aliados[6].linkFacebook" x-show="$store.landingPage.aliados.aliados[6].linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+														<i class="fa-brands fa-facebook-f"></i>
+														<i class="fa-brands fa-facebook-f"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[6].linkTwitter" x-show="$store.landingPage.aliados.aliados[6].linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-brands fa-x-twitter"></i>
+														<i class="fa-brands fa-x-twitter"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[6].linkInstagram" x-show="$store.landingPage.aliados.aliados[6].linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+														<i class="fa-brands fa-instagram"></i>
+														<i class="fa-brands fa-instagram"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[6].linkWeb" x-show="$store.landingPage.aliados.aliados[6].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-solid fa-globe"></i>
+														<i class="fa-solid fa-globe"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</template>
+								<template x-if="$store.landingPage.aliados.aliados[7]">
+									<div class="oc-item">
+										<div class="card border-0">
+											<img class="testimonial-image p-2 bg-white" :src="$store.landingPage.aliados.aliados[7].imagen.url" alt="Customer Testimonails">
+											<div class="card-body p-4 pt-2 position-relative overflow-hidden">
+												<div class="row">
+													<div class="col-12 text-center">
+														<h4 class="h6 mb-0 fw-bold" x-text="$store.landingPage.aliados.aliados[7].nombre"></h4>
+														<small class="text-muted" x-text="$store.landingPage.aliados.aliados[7].puestoNegocio"></small>
+														<p class="mb-4 font-primary fst-normal" x-text="$store.landingPage.aliados.aliados[7].descripcion"></p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-center mt-4">
+													<a :href="$store.landingPage.aliados.aliados[7].linkFacebook" x-show="$store.landingPage.aliados.aliados[7].linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+														<i class="fa-brands fa-facebook-f"></i>
+														<i class="fa-brands fa-facebook-f"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[7].linkTwitter" x-show="$store.landingPage.aliados.aliados[7].linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-brands fa-x-twitter"></i>
+														<i class="fa-brands fa-x-twitter"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[7].linkInstagram" x-show="$store.landingPage.aliados.aliados[7].linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+														<i class="fa-brands fa-instagram"></i>
+														<i class="fa-brands fa-instagram"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[7].linkWeb" x-show="$store.landingPage.aliados.aliados[7].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-solid fa-globe"></i>
+														<i class="fa-solid fa-globe"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</template>
+								<template x-if="$store.landingPage.aliados.aliados[8]">
+									<div class="oc-item">
+										<div class="card border-0">
+											<img class="testimonial-image p-2 bg-white" :src="$store.landingPage.aliados.aliados[8].imagen.url" alt="Customer Testimonails">
+											<div class="card-body p-4 pt-2 position-relative overflow-hidden">
+												<div class="row">
+													<div class="col-12 text-center">
+														<h4 class="h6 mb-0 fw-bold" x-text="$store.landingPage.aliados.aliados[8].nombre"></h4>
+														<small class="text-muted" x-text="$store.landingPage.aliados.aliados[8].puestoNegocio"></small>
+														<p class="mb-4 font-primary fst-normal" x-text="$store.landingPage.aliados.aliados[8].descripcion"></p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-center mt-4">
+													<a :href="$store.landingPage.aliados.aliados[8].linkFacebook" x-show="$store.landingPage.aliados.aliados[8].linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+														<i class="fa-brands fa-facebook-f"></i>
+														<i class="fa-brands fa-facebook-f"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[8].linkTwitter" x-show="$store.landingPage.aliados.aliados[8].linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-brands fa-x-twitter"></i>
+														<i class="fa-brands fa-x-twitter"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[8].linkInstagram" x-show="$store.landingPage.aliados.aliados[8].linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+														<i class="fa-brands fa-instagram"></i>
+														<i class="fa-brands fa-instagram"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[8].linkWeb" x-show="$store.landingPage.aliados.aliados[8].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-solid fa-globe"></i>
+														<i class="fa-solid fa-globe"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</template>
+								<template x-if="$store.landingPage.aliados.aliados[9]">
+									<div class="oc-item">
+										<div class="card border-0">
+											<img class="testimonial-image p-2 bg-white" :src="$store.landingPage.aliados.aliados[9].imagen.url" alt="Customer Testimonails">
+											<div class="card-body p-4 pt-2 position-relative overflow-hidden">
+												<div class="row">
+													<div class="col-12 text-center">
+														<h4 class="h6 mb-0 fw-bold" x-text="$store.landingPage.aliados.aliados[9].nombre"></h4>
+														<small class="text-muted" x-text="$store.landingPage.aliados.aliados[9].puestoNegocio"></small>
+														<p class="mb-4 font-primary fst-normal" x-text="$store.landingPage.aliados.aliados[9].descripcion"></p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-center mt-4">
+													<a :href="$store.landingPage.aliados.aliados[9].linkFacebook" x-show="$store.landingPage.aliados.aliados[9].linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+														<i class="fa-brands fa-facebook-f"></i>
+														<i class="fa-brands fa-facebook-f"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[9].linkTwitter" x-show="$store.landingPage.aliados.aliados[9].linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-brands fa-x-twitter"></i>
+														<i class="fa-brands fa-x-twitter"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[9].linkInstagram" x-show="$store.landingPage.aliados.aliados[9].linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+														<i class="fa-brands fa-instagram"></i>
+														<i class="fa-brands fa-instagram"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[9].linkWeb" x-show="$store.landingPage.aliados.aliados[9].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-solid fa-globe"></i>
+														<i class="fa-solid fa-globe"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</template>
+								<template x-if="$store.landingPage.aliados.aliados[10]">
+									<div class="oc-item">
+										<div class="card border-0">
+											<img class="testimonial-image p-2 bg-white" :src="$store.landingPage.aliados.aliados[10].imagen.url" alt="Customer Testimonails">
+											<div class="card-body p-4 pt-2 position-relative overflow-hidden">
+												<div class="row">
+													<div class="col-12 text-center">
+														<h4 class="h6 mb-0 fw-bold" x-text="$store.landingPage.aliados.aliados[10].nombre"></h4>
+														<small class="text-muted" x-text="$store.landingPage.aliados.aliados[10].puestoNegocio"></small>
+														<p class="mb-4 font-primary fst-normal" x-text="$store.landingPage.aliados.aliados[10].descripcion"></p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-center mt-4">
+													<a :href="$store.landingPage.aliados.aliados[10].linkFacebook" x-show="$store.landingPage.aliados.aliados[10].linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+														<i class="fa-brands fa-facebook-f"></i>
+														<i class="fa-brands fa-facebook-f"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[10].linkTwitter" x-show="$store.landingPage.aliados.aliados[10].linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-brands fa-x-twitter"></i>
+														<i class="fa-brands fa-x-twitter"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[10].linkInstagram" x-show="$store.landingPage.aliados.aliados[10].linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+														<i class="fa-brands fa-instagram"></i>
+														<i class="fa-brands fa-instagram"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[10].linkWeb" x-show="$store.landingPage.aliados.aliados[10].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-solid fa-globe"></i>
+														<i class="fa-solid fa-globe"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</template>
+								<template x-if="$store.landingPage.aliados.aliados[11]">
+									<div class="oc-item">
+										<div class="card border-0">
+											<img class="testimonial-image p-2 bg-white" :src="$store.landingPage.aliados.aliados[11].imagen.url" alt="Customer Testimonails">
+											<div class="card-body p-4 pt-2 position-relative overflow-hidden">
+												<div class="row">
+													<div class="col-12 text-center">
+														<h4 class="h6 mb-0 fw-bold" x-text="$store.landingPage.aliados.aliados[11].nombre"></h4>
+														<small class="text-muted" x-text="$store.landingPage.aliados.aliados[11].puestoNegocio"></small>
+														<p class="mb-4 font-primary fst-normal" x-text="$store.landingPage.aliados.aliados[11].descripcion"></p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-center mt-4">
+													<a :href="$store.landingPage.aliados.aliados[11].linkFacebook" x-show="$store.landingPage.aliados.aliados[11].linkFacebook" target="_blank" class="social-icon si-small rounded-circle text-white bg-facebook">
+														<i class="fa-brands fa-facebook-f"></i>
+														<i class="fa-brands fa-facebook-f"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[11].linkTwitter" x-show="$store.landingPage.aliados.aliados[11].linkTwitter" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
+														<i class="fa-brands fa-x-twitter"></i>
+														<i class="fa-brands fa-x-twitter"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[11].linkInstagram" x-show="$store.landingPage.aliados.aliados[11].linkInstagram" target="_blank" class="social-icon si-small rounded-circle text-white bg-instagram">
+														<i class="fa-brands fa-instagram"></i>
+														<i class="fa-brands fa-instagram"></i>
+													</a>
+													<a :href="$store.landingPage.aliados.aliados[11].linkWeb" x-show="$store.landingPage.aliados.aliados[11].linkWeb" target="_blank" class="social-icon si-small rounded-circle text-white bg-x-twitter">
 														<i class="fa-solid fa-globe"></i>
 														<i class="fa-solid fa-globe"></i>
 													</a>
