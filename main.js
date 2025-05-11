@@ -140,6 +140,9 @@ export const LANDINGPAGE_QUERY = gql`
           icono
         }
         textoBannerDeServicio
+        bannerOurService {
+          url
+        }
       }
       aliados {
         tituloPrincipal
